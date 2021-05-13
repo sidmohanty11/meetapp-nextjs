@@ -1,10 +1,9 @@
 import React from 'react'
+import MeetupDetail from '../../components/meetups/MeetupDetail';
 
 const DetailsPage = () => {
     return (
-        <div>
-            
-        </div>
+        <MeetupDetail />
     )
 }
 

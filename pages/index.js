@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import MeetupList from '../components/meetups/MeetupList';
 
 const MEETUPS = [
@@ -32,10 +31,39 @@ const MEETUPS = [
     },
 ];
 
-const HomePage = () => {
+const HomePage = (props) => {
+    //-----------does two times rendering!----------------
+    // const [meetups, setMeetups] = useState([]);
+    // useEffect(() => {
+    //     //fetch data
+    //     setMeetups();
+    // }, []);
+    //----------------------------------------------------
+
     return (
-        <MeetupList meetups={MEETUPS} />
+        <MeetupList meetups={props.meetups} />
     )
 }
+
+//SSG -> static site generation and incremental ssg
+export async function getStaticProps() {
+    //fetch data from database
+    return {
+        props: {
+            meetups:MEETUPS
+        },
+        revalidate: 1
+    }
+}
+
+//server side generation -> runs for every incoming req..
+// export async function getServerSideProps(context) {
+//     //fetch data from database
+//     const req = context.req; if you want these access ---similar to nodejs req,res---
+//     const res = context.res;
+//     return {
+//         props: MEETUPS
+//     }
+// }
 
 export default HomePage;
