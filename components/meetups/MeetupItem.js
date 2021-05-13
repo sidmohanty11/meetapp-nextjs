@@ -9,11 +9,11 @@ function MeetupItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
+          <h3 className={classes.title}>{props.title}</h3>
+          <address className={classes.address}>{props.address}</address>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <button>Read</button>
         </div>
       </Card>
     </li>

@@ -9,9 +9,9 @@
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .header ul {
