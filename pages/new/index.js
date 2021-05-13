@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import NewMeetupForm from '../../components/meetups/NewMeetupForm';
+import Head from 'next/head';
 
 const NewMeetUp = () => {
     const router = useRouter();
@@ -18,7 +19,10 @@ const NewMeetUp = () => {
     };
 
     return (
-        <NewMeetupForm onAddMeetup={addMeetupHandler} />
+        <>
+            <Head><title>New Mulakat</title></Head>
+            <NewMeetupForm onAddMeetup={addMeetupHandler} />
+        </>
     )
 }
 

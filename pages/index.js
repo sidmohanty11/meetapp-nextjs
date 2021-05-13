@@ -1,6 +1,7 @@
 import React from 'react';
 import { MongoClient } from 'mongodb';
 import MeetupList from '../components/meetups/MeetupList';
+import Head from 'next/head';
 
 // const MEETUPS = [
 //     {
@@ -42,7 +43,15 @@ const HomePage = (props) => {
     //----------------------------------------------------
 
     return (
-        <MeetupList meetups={props.meetups} />
+        <>
+            <Head>
+                <title>Mulakat</title>
+                <meta
+                    name="description"
+                    content="Every season is the season of love, so drown in the rain of love with your partner and post anonymous meets here that you experience again when you are old!" />
+            </Head>
+            <MeetupList meetups={props.meetups} />
+        </>
     )
 }
 
